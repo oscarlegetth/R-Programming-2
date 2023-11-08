@@ -22,9 +22,9 @@ count_above_zero = function(arr)
   return(n_above_zero)
 }
 
-n_feature_rna = apply(pbmc.data, MARGIN = 2, count_above_zero)
+#n_feature_rna = apply(pbmc.data, MARGIN = 2, count_above_zero)
 # better solution:
-# n_feature_rna = apply(pbmc.data > 0, MARGIN = 2, sum)
+n_feature_rna = apply(pbmc.data > 0, MARGIN = 2, sum)
 
 # calculate number of counts that where from mitochondrial genes
 # grep("^MT-", row.names((pbmc.data))) returns row names that start with "MT-"
